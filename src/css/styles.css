@@ -2,12 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: #2e2f42;
+  color: #2e2f54;
   font-family: 'Montserrat', sans-serif;
-}
-
-body {
-  background-color: #bd34fe;
 }
 
 input {
