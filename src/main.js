@@ -1,4 +1,5 @@
 import iziToast from 'izitoast';
+import axios from 'axios';
 
 import 'izitoast/dist/css/iziToast.min.css';
 import 'simplelightbox/dist/simple-lightbox.min.css';
@@ -11,15 +12,18 @@ const form = document.querySelector('.form');
 const gallery = document.querySelector('ul.gallery');
 const loader = document.querySelector('.loader');
 
-let lightbox = new SimpleLightbox('.galery a', {
+let lightbox = new SimpleLightbox('.gallery a',
+    {
   captionsData: 'alt',
   captionDelay: 250,
-});
+    }
+);
 
 iziToast.settings({
   timeout: 4000,
   position: 'topRight',
 });
+
 
 const createGalary = e => {
   e.preventDefault();
@@ -44,8 +48,7 @@ const createGalary = e => {
     .then(({ hits }) => {
       gallery.innerHTML = '';
      
-
-      const images = renderImages(hits);
+ const images = renderImages(hits);
       if (images) {
         loader.style.display = 'none';
       }
@@ -62,7 +65,7 @@ const createGalary = e => {
         loader.style.display = 'none';
         gallery.innerHTML = '';
       }
-
+        
       gallery.innerHTML = images;
       lightbox.refresh();
       form.reset();
