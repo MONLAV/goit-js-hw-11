@@ -12,12 +12,10 @@ const form = document.querySelector('.form');
 const gallery = document.querySelector('ul.gallery');
 const loader = document.querySelector('.loader');
 
-let lightbox = new SimpleLightbox('.gallery a',
-    {
+let lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
   captionDelay: 250,
-    }
-);
+});
 
 iziToast.settings({
   timeout: 4000,
@@ -25,7 +23,7 @@ iziToast.settings({
 });
 
 
-const createGalary = e => {
+const createGallery = e => {
   e.preventDefault();
   gallery.innerHTML = '';
   loader.style.display = 'block';
