@@ -3,8 +3,8 @@ export const renderImages = images => {
     .map(
       image => `
     <li class='gallery-item'>
-      <a href=${image.largeImageURL}>
-        <img alt=${image.tags} src=${image.webformatURL} class='gallery-image'/>
+      <a href="${image.largeImageURL}">
+        <img alt="${image.tags}" src="${image.webformatURL}" class='gallery-image'/>
       </a>
       <ul class='list-info'>
         <li class='item-info'>
