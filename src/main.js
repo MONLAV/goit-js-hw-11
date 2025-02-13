@@ -52,7 +52,8 @@ const createGallery = e => {
        loader.style.display = 'none';
        return;
       }
-        const images = renderImages(hits);
+
+      const images = renderImages(hits);
       gallery.innerHTML = images;
       loader.style.display = 'none';
       lightbox.refresh();

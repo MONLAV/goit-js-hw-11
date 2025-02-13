@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 export const searchImage = async (search, page = 1, perPage = 20) => {
   const url = `https://pixabay.com/api/`;
 
@@ -16,7 +18,7 @@ export const searchImage = async (search, page = 1, perPage = 20) => {
 
     return response.data;
   } catch (error) {
-    console.log('Error fetching images:', error);
+    console.error('Error fetching images:', error);
     throw error;
   }
 };
