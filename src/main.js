@@ -1,6 +1,4 @@
 import iziToast from 'izitoast';
-import axios from 'axios';
-
 import 'izitoast/dist/css/iziToast.min.css';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import SimpleLightbox from 'simplelightbox';
@@ -61,13 +59,13 @@ const createGallery = e => {
       form.reset();
     })
     .catch(error => {
-      console.log(error);
+      console.error('Error fetching images:', error);
       iziToast.error({
         iconUrl: errorIcon,
         iconColor: '#fff',
         imageWidth: 24,
         messageColor: '#fff',
-        message: error.message,
+        message: 'Error fetching images. Please try again later.',
       });
       loader.style.display = 'none';
     });
